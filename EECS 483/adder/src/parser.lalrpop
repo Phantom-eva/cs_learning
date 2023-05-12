@@ -1,0 +1,42 @@
+use std::str::FromStr;
+use crate::syntax::{SurfProg, Exp, Prim1};
+use crate::span::Span1;
+
+grammar;
+
+pub Prog: SurfProg<Span1> = {
+    Exp
+}
+
+Exp: Exp<Span1> = {
+    LET,
+    BaseExp
+}
+
+LET: Exp<Span1> = {
+    <l: @L> "let" <bindings:Bindings> "in" <body: Exp> <r: @R> => Exp::Let { bindings, body: Box::new(body), ann: Span1 { start_ix: l, end_ix: r }},
+}
+
+
+BaseExp: Exp<Span1> = {
+    <l: @L> <x: Id> <r: @R> => Exp::Var(x, Span1 { start_ix: l, end_ix: r }),
+    <l: @L> <n: Num> <r:@R> => Exp::Num(n, Span1 { start_ix: l, end_ix: r }),
+    <l:@L> <p:Prim1> "(" <e: Exp> ")" <r:@R> => Exp::Prim1(p, Box::new(e), Span1 { start_ix: l, end_ix: r }),
+    "(" <e: Exp> ")" => e,
+}
+
+Prim1: Prim1 = {
+    "add1" => Prim1::Add1,
+    "sub1" => Prim1::Sub1,
+}
+
+Bindings: Vec<(String, Exp<Span1>)> = {
+    <b: Id> "=" <e: Exp> => vec![(b, e)],
+    <mut bs:Bindings> "," <b: Id> "=" <e: Exp> => {
+        bs.push((b, e));
+        bs
+    }
+}
+
+Num: i64 = <s:r"[+-]?[0-9]+"> => i64::from_str(s).unwrap();
+Id: String = <s:r"[a-zA-Z][a-zA-Z0-9_]*"> => String::from(s);
