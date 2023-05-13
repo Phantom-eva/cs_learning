@@ -8,7 +8,9 @@
 
 `echo argument`: print out the arguments
 
-`pwd`: check the current working directory
+`which program`: which file is executed for a given program
+
+`pwd`: the current working directory
 
 `cd`: change the working directory
 
@@ -18,11 +20,39 @@
 
 `ls`: print the contents of the current directory
 
+`ls -l`: show what permissions the owner group, the owning group, and everyone else have
+
 `mv`: rename/move a file
 
 `cp`: copy a file
 
 `mkdir`: make a new directory
+
+`curl`: transfer data to or from a server
+
+`grep`: find or search a regular expression or a string in a text file
+
+`echo 3 | sudo tee brightness`: open the file and write 3 into it
+
+### Shell Scripting
+
+`$0`: Name of the script
+
+`$1~$9`: Arguments to the script
+
+`$@`: All the arguments
+
+`$#`: Number of arguments
+
+`$?`: Return code of the previous command
+
+`$$`: Process identification number for the current script
+
+`!!`: Entire last command, including arguments
+
+`$_`: Last argument from the last command
+
+
 
 ## 2. UCB CS61A: Structure and Interpretation of Computer Programs
 
