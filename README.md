@@ -1,6 +1,8 @@
 # Computer Science Study Plan
 
-## 1. MIT: Missing-Semester
+## 1. Shell
+
+## 1.1. MIT: Missing-Semester
 
 ### Shell Command
 
@@ -52,25 +54,80 @@
 
 `$_`: Last argument from the last command
 
+## 2. SQL
+
+## 2.1. CMU: 15-445 Database Systems
+
+```sql
+SELECT * FROM R WHERE a_id = 'a2';
+```
+
+```sql
+SELECT a_id, b_id FROM R WHERE a_id = 'a2';
+```
+
+```sql
+(SELECT * FROM R) UNION ALL (SELECT * FROM S);
+```
+
+```sql
+(SELECT * FROM R) INTERSECT (SELECT * FROM S);
+```
+
+```sql
+(SELECT * FROM R) EXCEPT (SELECT * FROM S);
+```
+
+```sql
+(SELECT * FROM R) CROSS JOIN (SELCT * FROM S);
+```
+
+```sql
+SELECT * FROM R JOIN S USING (ATTRIBUTE1, ATTRIBUTE2...);
+```
+
+```sql
+CREATE TABLE student (
+	sid INT PRIMARY KEY,
+	name VARCHAR(16),
+	login VARCHAR(32) UNIQUE,
+	age SMALLINT,
+	gpa FLOAT
+);
+CREATE TABLE course (
+	cid VARCHAR(32) PRIMARY KEY,
+	name VARCHAR(32) NOT NULL
+);
+CREATE TABLE enrolled (
+	sid INT REFERENCES student (sid),
+	cid VARCHAR(32) REFERENCES course (cid),
+	grade CHAR(1)
+);
+```
+
+```sql
+SELECT AVG(gpa), COUNT(sid) FROM student WHERE login LIKE '%@cs';
+```
+
+```sql
+SELECT AVG(s.gpa), e.cid
+FROM enrolled AS e, student AS s
+WHERE e.sid = s.sid
+GROUP BY e.cid
+HAVING AVG(s.gpa) > 3.9;
+```
+
+```sql
+SELECT DISTINCT cid INTO CourseIds FROM enrolled
+```
 
 
-## 2. UCB CS61A: Structure and Interpretation of Computer Programs
 
-## 3. Stanford CS106L: Standard C++ Programming
+## 3. C++
 
-## 4. Stanford CS110L: Safety in Systems Programming
+## 4. Python
 
-## 5. UCB CS169: Software Engineering
+## 5. Java
 
-## 6. UCB CS61C: Great Ideas in Computer Architecture
 
-## 7. CMU 15-213: Introduction to Computer System
-
-## 8. UCB CS162: Operating System
-
-## 9. Stanford CS144: Computer Network
-
-## 10. CMU 15-445: Introduction to Database System
-
-## 11. Stanford CS143: Compilers 
 
