@@ -1,10 +1,10 @@
 # Computer Science Study Plan
 
-## 1. Shell
+## 1. Programming Languages
 
-## 1.1. MIT: Missing-Semester
+### 1.1. Shell
 
-### Shell Command
+#### Shell Command
 
 `date`: print the current date and time
 
@@ -36,7 +36,7 @@
 
 `echo 3 | sudo tee brightness`: open the file and write 3 into it
 
-### Shell Scripting
+#### Shell Scripting
 
 `$0`: Name of the script
 
@@ -54,9 +54,7 @@
 
 `$_`: Last argument from the last command
 
-## 2. SQL
-
-## 2.1. CMU: 15-445 Database Systems
+### 1.2. SQL
 
 ```sql
 SELECT * FROM R WHERE a_id = 'a2';
@@ -121,13 +119,27 @@ HAVING AVG(s.gpa) > 3.9;
 SELECT DISTINCT cid INTO CourseIds FROM enrolled
 ```
 
+### 1.3. C++
 
+### 1.4. Python
 
-## 3. C++
+### 1.5. Java
 
-## 4. Python
+### 1.6. Rust
 
-## 5. Java
+## 7. Data Structures and Algorithms
 
+## 8. Operating System
 
+## 9. Computer Architecture
+
+## 10. Distributed System
+
+## 11. Computer Security
+
+## 12. Computer Network
+
+## 13. Database System
+
+## 14. Compilers
 
