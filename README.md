@@ -2,86 +2,166 @@
 
 ## 1. Programming Languages
 
-### 1.1. Shell
+### 1.1. Shell (MIT-Missing-Semester)
 
 #### Shell Command
 
-`date`: print the current date and time
+````shell
+date # print the current date and time
+````
 
-`echo argument`: print out the arguments
+````shell
+echo argument # print out the arguments
+````
 
-`which program`: which file is executed for a given program
+```shell
+which program # which file is executed for a given program
+```
 
-`pwd`: the current working directory
+```shell
+pwd # the current working directory
+```
 
-`cd`: change the working directory
+```shell
+cd # change the working directory
+```
 
-`.`: the current directory
+```shell
+. # the current directory
+```
 
-`..`: its parent directory
+```shell
+.. # its parent directory
+```
 
-`ls`: print the contents of the current directory
+```shell
+ls # print the contents of the current directory
+```
 
-`ls -l`: show what permissions the owner group, the owning group, and everyone else have
+```shell
+ls -l # show what permissions the owner group, the owning group, and everyone else have
+```
 
-`mv`: rename/move a file
+```shell
+mv # rename/move a file
+```
 
-`cp`: copy a file
+```shell
+cp # copy a file
+```
 
-`mkdir`: make a new directory
+```shell
+mkdir # create a new directory
+```
 
-`curl`: transfer data to or from a server
+```shell
+touch # create a new file
+```
 
-`grep`: find or search a regular expression or a string in a text file
+```shell
+man program # show the manual page of a program
+```
 
-`echo 3 | sudo tee brightness`: open the file and write 3 into it
+```shell
+cat file # print the contents of a file
+```
+
+```shell
+curl # transfer data to or from a server
+```
+
+```shell
+grep # find or search a regular expression or a string in a text file
+```
+
+```shell
+echo 3 | sudo tee brightness # open the file and write 3 into it
+```
+
+```shell
+chmod 777 program # change permissions of a program
+```
+
+```shell
+find . -type f -name '*.py' # find all python files
+```
+
+```shell
+rg -t py 'import requests' # find all python files where I used the requests library
+```
+
+```shell
+tar -czvf test.zip # compress the file
+tar -tzvf test.zip # show the contents of the zip
+tar -xzvf test.zip # unzip the file
+```
+
+```shell
+find . -type f -print0 | xargs -0 ls -l -t | head -1
+```
 
 #### Shell Scripting
 
-`$0`: Name of the script
+```shell
+$0 # Name of the script
+```
 
-`$1~$9`: Arguments to the script
+```shell
+$1~$9 # Arguments to the script
+```
 
-`$@`: All the arguments
+```shell
+$@ # All the arguments
+```
 
-`$#`: Number of arguments
+```shell
+$# # Number of arguments
+```
 
-`$?`: Return code of the previous command
+```shell
+$? # Return code of the previous command
+```
 
-`$$`: Process identification number for the current script
+```shell
+$$ # Process identification number for the current script
+```
 
-`!!`: Entire last command, including arguments
+```shell
+!! # Entire last command, including arguments
+```
 
-`$_`: Last argument from the last command
+```shell
+$_ # Last argument from the last command
+```
 
 ### 1.2. SQL
 
 ```sql
-SELECT * FROM R WHERE a_id = 'a2';
+SELECT * FROM R WHERE a_id = 'a2'; # select
 ```
 
 ```sql
-SELECT a_id, b_id FROM R WHERE a_id = 'a2';
+SELECT a_id, b_id FROM R WHERE a_id = 'a2'; # projection
 ```
 
 ```sql
-(SELECT * FROM R) UNION ALL (SELECT * FROM S);
+(SELECT * FROM R) UNION ALL (SELECT * FROM S); # union
 ```
 
 ```sql
-(SELECT * FROM R) INTERSECT (SELECT * FROM S);
+(SELECT * FROM R) INTERSECT (SELECT * FROM S); # intersection
 ```
 
 ```sql
-(SELECT * FROM R) EXCEPT (SELECT * FROM S);
+(SELECT * FROM R) EXCEPT (SELECT * FROM S); # difference
 ```
 
 ```sql
-(SELECT * FROM R) CROSS JOIN (SELCT * FROM S);
+(SELECT * FROM R) CROSS JOIN (SELCT * FROM S); # product
 ```
 
 ```sql
-SELECT * FROM R JOIN S USING (ATTRIBUTE1, ATTRIBUTE2...);
+SELECT * FROM R JOIN S USING (ATTRIBUTE1, ATTRIBUTE2...); # join
 ```
 
 ```sql
@@ -100,7 +180,7 @@ CREATE TABLE enrolled (
 	sid INT REFERENCES student (sid),
 	cid VARCHAR(32) REFERENCES course (cid),
 	grade CHAR(1)
-);
+); # create table
 ```
 
 ```sql
@@ -119,13 +199,13 @@ HAVING AVG(s.gpa) > 3.9;
 SELECT DISTINCT cid INTO CourseIds FROM enrolled
 ```
 
-### 1.3. C++
+### 1.3. C++ (Stanford CS106L)
 
-### 1.4. Python
+### 1.4. Python (UCB CS61A)
 
 ### 1.5. Java
 
-### 1.6. Rust
+### 1.6. Rust (Stanford CS110L)
 
 ## 7. Data Structures and Algorithms
 
@@ -139,7 +219,9 @@ SELECT DISTINCT cid INTO CourseIds FROM enrolled
 
 ## 12. Computer Network
 
-## 13. Database System
+## 13. Database System (CMU 15-445/645)
+
+
 
 ## 14. Compilers
 
