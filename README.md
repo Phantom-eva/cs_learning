@@ -134,6 +134,92 @@ $$ # Process identification number for the current script
 $_ # Last argument from the last command
 ```
 
+#### Regular Expressions
+
+```shell
+. # means "any single character" except newline
+```
+
+```shell
+* # zero or more of the preceding match
+```
+
+```shell
++ # one or more of the preceding match
+```
+
+```shell
+[abc] # any one character of a, b, and c
+```
+
+```shell
+(RX1|RX2) # either something that matches RX1 or RX2
+```
+
+```shell
+^ # the start of the line
+```
+
+```shell
+$ # the end of the line
+```
+
+#### Remote Machines
+
+```shell
+ssh user@server
+```
+
+```shell
+ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519
+```
+
+#### Git Command
+
+```shell
+git init # create a new git repo
+```
+
+```shell
+git status # tell you what's going on
+```
+
+```shell
+git add # add files to staging area
+```
+
+```shell
+git commit # create a new commit
+```
+
+```shell
+git log # show a flattened log of history
+```
+
+```shell
+git branch # show branches
+```
+
+```shell
+git checkout -b <name> # create a branch and switches to it
+```
+
+```shell
+git fetch # retrieve objects/references from a remote
+```
+
+```shell
+git pull # same as git fetch; git merge
+```
+
+```shell
+git clone # download repository from remote
+```
+
+```shell
+git commit --amend # edit a commit's contents/message
+```
+
 ### 1.2. SQL
 
 ```sql
